@@ -8,7 +8,6 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 
 function App() {
-  // Animation observer for fade and slide effects
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {

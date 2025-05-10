@@ -56,7 +56,7 @@ const Header: React.FC = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-6">
-          {navLinks.map((link) => (
+          {/* {navLinks.map((link) => (
             <Link
               key={link.path}
               to={link.path}
@@ -64,7 +64,7 @@ const Header: React.FC = () => {
             >
               {link.name}
             </Link>
-          ))}
+          ))} */}
           <a href="tel:+18005551234" className="btn btn-primary ml-4 text-sm">
             <Phone size={16} className="mr-2" />
             (800) 555-1234
