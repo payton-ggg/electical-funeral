@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone } from 'lucide-react';
-import Logo from '../ui/Logo';
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X, Phone } from "lucide-react";
+import Logo from "../ui/Logo";
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,8 +21,8 @@ const Header: React.FC = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
@@ -31,25 +31,22 @@ const Header: React.FC = () => {
   }, [location]);
 
   const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'Services', path: '/services' },
-    { name: 'About Us', path: '/about' },
-    { name: 'Obituaries', path: '/obituaries' },
-    { name: 'Resources', path: '/resources' },
-    { name: 'Pre-Planning', path: '/planning' },
-    { name: 'Contact', path: '/contact' },
+    { name: "Home", path: "/" },
+    { name: "Services", path: "/services" },
+    { name: "About Us", path: "/about" },
+    { name: "Contact", path: "/contact" },
   ];
 
   const isActive = (path: string) => {
-    return location.pathname === path ? 
-      'text-primary-700 font-semibold' : 
-      'text-gray-700 hover:text-primary-600 transition-colors';
+    return location.pathname === path
+      ? "text-primary-700 font-semibold"
+      : "text-gray-700 hover:text-primary-600 transition-colors";
   };
 
   return (
-    <header 
+    <header
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-soft py-2' : 'bg-transparent py-4'
+        isScrolled ? "bg-white shadow-soft py-2" : "bg-transparent py-4"
       }`}
     >
       <div className="container flex justify-between items-center">
@@ -75,22 +72,25 @@ const Header: React.FC = () => {
         </nav>
 
         {/* Mobile Menu Button */}
-        <button 
-          className="lg:hidden z-10 p-2" 
+        <button
+          className="lg:hidden z-10 p-2"
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
           {isMenuOpen ? (
             <X size={24} className="text-gray-800" />
           ) : (
-            <Menu size={24} className={`${isScrolled ? 'text-gray-800' : 'text-white'}`} />
+            <Menu
+              size={24}
+              className={`${isScrolled ? "text-gray-800" : "text-white"}`}
+            />
           )}
         </button>
 
         {/* Mobile Navigation */}
-        <div 
+        <div
           className={`fixed inset-0 bg-white z-0 flex flex-col justify-center items-center transition-transform duration-300 ease-in-out ${
-            isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+            isMenuOpen ? "translate-x-0" : "translate-x-full"
           } lg:hidden`}
         >
           <nav className="flex flex-col items-center space-y-6 py-8">
