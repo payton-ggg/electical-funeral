@@ -1,5 +1,12 @@
 import React from "react";
-import { Heart, Candy as Candle, Users, Calendar } from "lucide-react";
+import { Link } from "react-router-dom";
+import {
+  Heart,
+  Candy as Candle,
+  Users,
+  Calendar,
+  ArrowRight,
+} from "lucide-react";
 
 const services = [
   {
@@ -66,8 +73,24 @@ const ServicesSection: React.FC = () => {
               <p className="text-gray-600 mb-6 flex-grow">
                 {service.description}
               </p>
+              <Link
+                to={service.link}
+                className="text-primary-600 font-medium inline-flex items-center group hover:text-primary-700 transition-colors mt-auto"
+              >
+                Learn More
+                <ArrowRight
+                  size={16}
+                  className="ml-1 transition-transform group-hover:translate-x-1"
+                />
+              </Link>
             </div>
           ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <Link to="/services" className="btn btn-primary">
+            View All Services
+          </Link>
         </div>
       </div>
     </section>

@@ -4,8 +4,7 @@ import ServicesSection from "../components/home/Services";
 import AboutSection from "../components/home/About";
 import Testimonials from "../components/home/Testimonials";
 import ContactSection from "../components/home/Contact";
-import { Link } from "react-router-dom";
-import { ArrowRight, Candy as Candle } from "lucide-react";
+import { Candy as Candle } from "lucide-react";
 
 const Home: React.FC = () => {
   return (
@@ -46,15 +45,7 @@ const Home: React.FC = () => {
               <div
                 className="flex-shrink-0 slide-up"
                 style={{ animationDelay: "300ms" }}
-              >
-                <Link to="/planning" className="btn btn-primary group">
-                  Start Planning
-                  <ArrowRight
-                    size={18}
-                    className="ml-2 transition-transform group-hover:translate-x-1"
-                  />
-                </Link>
-              </div>
+              ></div>
             </div>
           </div>
         </div>
