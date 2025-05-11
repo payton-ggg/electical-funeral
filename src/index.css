@@ -6,58 +6,80 @@
   html {
     scroll-behavior: smooth;
   }
-  
+
   body {
     @apply font-body text-gray-800;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-heading;
   }
 }
 
 @layer components {
-  .container {
-    @apply px-4 md:px-6 mx-auto max-w-7xl;
-  }
-  
   .btn {
     @apply inline-flex items-center justify-center px-6 py-3 rounded transition-all duration-300 font-medium;
   }
-  
+
   .btn-primary {
     @apply bg-primary-600 text-white hover:bg-primary-700 focus:ring-4 focus:ring-primary-300;
   }
-  
+
   .btn-secondary {
     @apply bg-white text-primary-700 border border-primary-600 hover:bg-gray-50 focus:ring-4 focus:ring-primary-100;
   }
-  
-  .section {
-    @apply py-12 md:py-20;
-  }
-  
-  .section-title {
-    @apply text-3xl md:text-4xl font-semibold mb-4 text-primary-900;
-  }
-  
-  .section-subtitle {
-    @apply text-xl text-gray-600 max-w-3xl mx-auto mb-12;
-  }
-  
+
   .fade-in {
     @apply opacity-0 transition-opacity duration-1000;
   }
-  
+
   .fade-in.appear {
     @apply opacity-100;
   }
-  
+
   .slide-up {
     @apply translate-y-8 opacity-0 transition-all duration-700;
   }
-  
+
   .slide-up.appear {
     @apply translate-y-0 opacity-100;
+  }
+
+  /* Burger Menu Animation */
+  .burger-menu {
+    @apply relative w-6 h-5;
+  }
+
+  .burger-menu span {
+    @apply absolute left-0 w-full h-0.5 transition-all duration-300 ease-in-out;
+  }
+
+  .burger-menu span:nth-child(1) {
+    @apply top-0;
+  }
+
+  .burger-menu span:nth-child(2) {
+    @apply top-1/2 -translate-y-1/2;
+  }
+
+  .burger-menu span:nth-child(3) {
+    @apply bottom-0;
+  }
+
+  .burger-menu.open span:nth-child(1) {
+    @apply top-1/2 -translate-y-1/2 rotate-45;
+  }
+
+  .burger-menu.open span:nth-child(2) {
+    @apply opacity-0;
+  }
+
+  .burger-menu.open span:nth-child(3) {
+    @apply top-1/2 -translate-y-1/2 -rotate-45;
   }
 }
