@@ -1,19 +1,21 @@
 import React from "react";
-import { Phone } from "lucide-react";
+import { Phone, ArrowRight } from "lucide-react";
 
 const Hero: React.FC = () => {
   return (
     <section className="relative min-h-screen flex items-center text-white">
-      {/* Background Image with Overlay */}
       <div
-        className="absolute inset-0 bg-hero-pattern bg-cover bg-center"
-        style={{ backgroundPosition: "25% center" }}
+        className="absolute inset-0 bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "url('https://images.pexels.com/photos/531321/pexels-photo-531321.jpeg?auto=compress&cs=tinysrgb&w=1600')",
+          backgroundPosition: "25% center",
+        }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-primary-900/90 to-primary-800/70"></div>
       </div>
 
-      {/* Content */}
-      <div className="container relative z-10 mt-16">
+      <div className="container mx-auto px-4 relative z-10 mt-16">
         <div className="max-w-3xl">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-semibold leading-tight mb-6 fade-in">
             Compassionate Care During Life's Most Difficult Moments
@@ -30,6 +32,16 @@ const Hero: React.FC = () => {
             style={{ animationDelay: "400ms" }}
           >
             <a
+              href="#contact"
+              className="btn btn-primary flex items-center gap-2 group"
+            >
+              Contact Us
+              <ArrowRight
+                size={18}
+                className="transition-transform group-hover:translate-x-1"
+              />
+            </a>
+            <a
               href="tel:+18005551234"
               className="btn btn-secondary backdrop-blur-sm bg-white/10 border-white/20 text-white hover:bg-white/20"
             >
@@ -39,9 +51,6 @@ const Hero: React.FC = () => {
           </div>
         </div>
       </div>
-
-      {/* Decorative Element */}
-      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-gray-50 to-transparent"></div>
     </section>
   );
 };
